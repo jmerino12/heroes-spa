@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const charactersByHero = ({alter_ego,characters}) => {
+const charactersByHero = ({ alter_ego, characters }) => {
     if (alter_ego === characters) return (<></>);
     return <p>{characters}</p>
 }
