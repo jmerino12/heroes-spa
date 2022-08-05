@@ -1,10 +1,12 @@
+import { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../helpers/getHeroById";
 
 export const HeroePage = () => {
   const { heroId, ...rest } = useParams();
   const navigate = useNavigate();
-  const hero = getHeroById(heroId);
+  const hero = useMemo( () => getHeroById(heroId), [heroId]);
+  
   const onBack = () => {
     navigate(-1)
   }
@@ -30,9 +32,9 @@ export const HeroePage = () => {
         <h5 className="mt-3">Characters</h5>
         <p>{hero.characters}</p>
 
-        <button 
-        className="btn btn-outline-primary" 
-        onClick={onBack}>
+        <button
+          className="btn btn-outline-primary"
+          onClick={onBack}>
           Regresar
         </button>
       </div>
