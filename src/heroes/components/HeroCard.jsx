@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const charactersByHero = ({ alter_ego, characters }) => {
+const CharactersByHero = ({ alter_ego, characters }) => {
     if (alter_ego === characters) return (<></>);
     return <p>{characters}</p>
 }
@@ -28,13 +28,13 @@ export const HeroCard = ({
                             {/*
                                 (alter_ego !== characters) && (charactersByHero)
     */}
-                            <charactersByHero />
+                            <CharactersByHero />
 
                             <p className="card-text">
                                 <small className="text-muted">{first_appearance}</small>
                             </p>
 
-                            <Link to={`/hero/${id}`}>Más...</Link>
+                            <Link to={`/heroe/${id}`}>Más...</Link>
                         </div>
                     </div>
                 </div>
